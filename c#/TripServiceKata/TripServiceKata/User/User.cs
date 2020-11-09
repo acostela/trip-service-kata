@@ -2,7 +2,15 @@
 
 namespace TripServiceKata.User
 {
-    public class User
+    public interface IUser
+    {
+        List<User> GetFriends();
+        void AddFriend(User user);
+        void AddTrip(Trip.Trip trip);
+        List<Trip.Trip> Trips();
+    }
+
+    public class User : IUser
     {
         private List<Trip.Trip> trips = new List<Trip.Trip>();
         private List<User> friends = new List<User>();
